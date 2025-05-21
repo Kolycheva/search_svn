@@ -1,3 +1,4 @@
+// в этом файле перчисленны функции и элементы, которые есть в классе
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -18,7 +19,11 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+
+    /*Вы рисуете форму в Qt Designer → сохраняете как mainwindow.ui
+    Qt автоматически генерирует ui_mainwindow.h при сборке*/
+
+    Ui::MainWindow *ui;  // Указатель на интерфейс
 
     void on_searchButton_clicked();
     void on_detectMd5Button_clicked();
@@ -30,7 +35,7 @@ private:
     // Общая функция для MD5
     QString getFileMd5(const QString &content);
 
-    // ДЛя рекурсивного поиска по репозиторию
+    // Для рекурсивного поиска по репозиторию
     QStringList getSvnFileList(const QString &repoUrl);
 
     // Чтение содержимого файла из SVN
